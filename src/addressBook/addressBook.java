@@ -18,7 +18,7 @@ public class addressBook {
                 System.out.println("\nError: Please select an option from the menu\n");
             } else if (menuChoice.equals("X")) {
                 break;
-            } else if (menuChoice.equals("C")  menuChoice.equals("R")  menuChoice.equals("U") || menuChoice.equals("D")) {
+            } else if (menuChoice.equals("C") || menuChoice.equals("R") || menuChoice.equals("U") || menuChoice.equals("D")) {
 switch (menuChoice) {
                     case "C":
                         System.out.println("\n C test \n");
@@ -60,8 +60,9 @@ switch (menuChoice) {
      }
 
 }
-
+/* 
 public class Person {
+
 
     private String Id;
     private String Name;
@@ -92,3 +93,4 @@ public class Person {
 
 
 }
+*/
