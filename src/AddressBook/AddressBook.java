@@ -1,5 +1,6 @@
 package AddressBook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 /*EXAMPLE of how it should be in here:
  * 
@@ -27,7 +28,9 @@ Friends Cafe -- 5
 
 public class AddressBook {
 	public static void main(String[] args) throws Exception { 
+
 		char menuChoice = '\n';
+		ArrayList<String> itemList = new ArrayList<String >();
 		//Scanner scnr = new Scanner(System.in);
 		//System.out.println("Welcome to Team 2's Address Book.");
 
@@ -75,7 +78,8 @@ public class AddressBook {
 			// Case C
 			case 'C':
 				System.out.println("Please enter the following information:");
-				System.out.println("What is the name? ");
+				System.out.println("Name: ");
+				System.out.println(": ");
 				
 		}
 		return menuChoice;
