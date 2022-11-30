@@ -1,4 +1,4 @@
-package addressBook;
+package AddressBook;
 
 import java.util.Scanner;
 /*EXAMPLE of how it should be in here:
@@ -24,10 +24,11 @@ My favorite restaurants:
 Central Deli -- 4
 Friends Cafe -- 5
  */
+
 public class AddressBook {
 	public static void main(String[] args) throws Exception { 
 		char menuChoice = '\n';
-		Scanner scnr = new Scanner(System.in);
+		//Scanner scnr = new Scanner(System.in);
 		//System.out.println("Welcome to Team 2's Address Book.");
 
 		// A loop that will keep the program running as long as "X" isn't entered
@@ -73,7 +74,9 @@ public class AddressBook {
 		switch(menuChoice){
 			// Case C
 			case 'C':
-				System.out.println("");
+				System.out.println("Please enter the following information:");
+				System.out.println("What is the name? ");
+				
 		}
 		return menuChoice;
 	}
