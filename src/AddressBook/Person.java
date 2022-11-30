@@ -1,4 +1,4 @@
-package addressBook;
+package AddressBook;
 /*
  * EXAMPLE OF HOW ITS IN HERE:
  * public class Restaurant {                          // Info about a restaurant
@@ -23,10 +23,15 @@ public class Person {
 	private String address;
 	private String email;
 	private String id;
-	private String name;
+	private String name;// maybe seperate to first and last name?idk
 	private int phone; 
 
-	public Person(){
-
+	public Person() {
+		address = "Unknown";
+		email = "Unknown";
+		id = "Unknown";
+		name = "Unknown";
+		phone = -1;
 	}
+	
 }
