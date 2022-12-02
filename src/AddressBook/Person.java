@@ -7,17 +7,19 @@ public class Person {
 	private String address;
 	private String name;
 	private long phoneNum;
+	private String ID;
 
 	public Person() {
-		this("Unknown", -1, "Unknown", -1, "Unknown");
+		this("Unknown", -1, "Unknown", -1, "Unknown", "Unknown");
 	}
 
-	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress) {
+	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress, String pID) {
 		setName(pName);
 		setAge(pAge);
 		setEmail(pEmail);
 		setPhoneNum(pPhoneNum);
 		setAddress(pAddress);
+		setID(pID);
 	}
 
 	public void setAddress(String pAddress) {
@@ -63,6 +65,14 @@ public class Person {
 		return email;
 	}
 
+	public void setID(String pID) {
+		this.ID = pID;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
 	public void setName(String pName) {
 		name = pName;
 	}
@@ -81,8 +91,10 @@ public class Person {
 
 	@Override
 	public String toString() {
-		//return getName() + "\t" + getAge() + "\t" + getEmail() + "\t" + getPhoneNum() + "\t" + getAddress();
-		return "Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail() + ", PhoneNumber: "
-				+ getPhoneNum() + ", Address: " + getAddress();
+		// return getName() + "\t" + getAge() + "\t" + getEmail() + "\t" + getPhoneNum()
+		// + "\t" + getAddress();
+		return "ID: " + getID() + ", Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail()
+				+ ", PhoneNumber: " + getPhoneNum() + ", Address: " + getAddress();
 	}
+
 }
