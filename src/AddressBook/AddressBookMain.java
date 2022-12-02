@@ -32,7 +32,7 @@ public class AddressBookMain {
 		int fSalary = -1;
 
 		
-		//Iterator iterate = list.iterator();
+		Iterator iterate = list.iterator();
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
 
@@ -96,10 +96,10 @@ public class AddressBookMain {
 				}
 				break;
 
-				case 'V':
-					for (int i = 0; i < list.size(); i++) {
-						System.out.println(list.get(i));
-					}
+			case 'V':
+				for (int i = 0; i < list.size(); i++) {
+					System.out.println(list.get(i));
+				}
 				//System.out.println("\nContact " + (i + 1) + "\n");
 				/*
 				//System.out.println(p);
@@ -113,7 +113,6 @@ public class AddressBookMain {
 				//	System.out.print(pr.toString());
 				//}
 				break;
-			
 		}
 	}
 
