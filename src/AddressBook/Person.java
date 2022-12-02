@@ -33,13 +33,32 @@ public class Person{
 			this.age = pAge; 
 		}
 	}
-	public int getAge(){
+
+	public int getAge() {
 		return age;
 	}
 
-	public void setEmail(String pEmail){
-		email = pEmail;
+	public static boolean checkEmail(String pEmail) {
+		boolean ret = false;
+
+		// get index of '@' and last '.'
+		int index1 = pEmail.indexOf('@');
+		int index2 = pEmail.lastIndexOf('.');
+
+		// if both character exist
+		if (index1 != -1 && index2 != -1) {
+			// check character '@' before '.'
+			if (index1 < index2) {
+				ret = true;
+			}
+		}
+		return (ret);
 	}
+	
+	public void setEmail(String pEmail) {
+		this.email = pEmail;
+	}
+	
 	public String getEmail(){
 		return email;
 	}
