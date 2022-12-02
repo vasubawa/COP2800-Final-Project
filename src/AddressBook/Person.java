@@ -8,18 +8,20 @@ public class Person{
 	private String email;
 	private String address;
 	private String name;
-	private String phoneNum;
+	private long phoneNum;
 
-	public Person(){
-		this("Unknown", -1, "Unknown", "Unknown", "Unknown");
+	public Person() {
+		this("Unknown", -1, "Unknown", -1, "Unknown");
 	}
-	public Person(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress) {
+	
+	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress) {
 		setName(pName);
 		setAge(pAge);
 		setEmail(pEmail);
 		setPhoneNum(pPhoneNum);
 		setAddress(pAddress);
     }
+	
 
 	public void setAddress(String pAddress){
 		address = pAddress;
@@ -70,10 +72,10 @@ public class Person{
 		return name;
 	}
 
-	public void setPhoneNum(String pPhoneNum){
+	public void setPhoneNum(long pPhoneNum){
 		phoneNum = pPhoneNum;
 	}
-	public String getPhoneNum(){
+	public long getPhoneNum(){
 		return phoneNum;
 	}
 	

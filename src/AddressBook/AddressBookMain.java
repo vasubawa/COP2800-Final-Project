@@ -17,13 +17,12 @@ public class AddressBookMain {
 
 	}
 
-	public static void processChoice(char menuChoice, ArrayList<Person> list){
-		String s = "FIX ME";
+	public static void processChoice(char menuChoice, ArrayList<Person> list) {
 		
 		String pName = "\n";
 		String pEmail = "\n";
 		String pAddress = "\n";
-		String pPhoneNum = "\n";
+		long pPhoneNum = -1;
 		int pAge = -1;
 		
 		char personChoice;
@@ -33,12 +32,13 @@ public class AddressBookMain {
 		int fSalary = -1;
 
 		
-		Iterator iterate = list.iterator();
+		//Iterator iterate = list.iterator();
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
 
 		switch (menuChoice){
 			case 'C':
+				//Person person = new Person();
 				System.out.println("Please enter the following information:");
 
 				System.out.println("Full Name:");
@@ -59,10 +59,16 @@ public class AddressBookMain {
 				//pEmail = "p@email.com";//sScan.nextLine();
 
 				System.out.println("Phone Number:");
-				pPhoneNum = "pNumber";//sScan.nextLine();
+				pPhoneNum = -1 ;//sScan.nextLine();
 
 				System.out.println("Home Address:");
 				pAddress = "pAddress";//sScan.nextLine();
+
+				//person.setName(pName);
+				//person.setAge(pAge);
+				//person.setEmail(pEmail);
+				//person.setPhoneNum(pPhoneNum);
+				//person.setAddress(pAddress);
 
 				personChoice = menuTypeSelection().charAt(0);
 				switch (personChoice){
@@ -84,18 +90,24 @@ public class AddressBookMain {
 						break;
 
 					default:
-					list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress));
+						list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress));
+						//list.add(person);
 						break;
 				}
 				break;
 
 				case 'V':
-					//System.out.println(p);
-					while(iterate.hasNext()){
-						Object pTemp = iterate.next();
-						System.out.println(pTemp);;
-
+					for (int i = 0; i < list.size(); i++) {
+						System.out.println(list.get(i));
 					}
+				//System.out.println("\nContact " + (i + 1) + "\n");
+				/*
+				//System.out.println(p);
+				while (iterate.hasNext()) {
+					Object pTemp = iterate.next();
+					System.out.println(pTemp);
+				}
+				*/
 				//System.out.print(p);
 				//for (Person pr : p){
 				//	System.out.print(pr.toString());

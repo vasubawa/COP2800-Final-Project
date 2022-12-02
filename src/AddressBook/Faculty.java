@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Faculty extends Person
 {
-	public Faculty(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress) {
+	public Faculty(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress) {
 		super(pName, pAge, pEmail, pPhoneNum, pAddress);
 		//TODO Auto-generated constructor stub
 	}
