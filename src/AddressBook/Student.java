@@ -5,8 +5,9 @@ import java.util.*;
 public class Student extends Person
 {
 
-	public Student(int age, String userEmail, String userAddress, String userName, int userPhoneNum) {
-		super(age, userEmail, userAddress, userName, userPhoneNum);
+	public Student(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress) {
+		super(pName, pAge, pEmail, pPhoneNum, pAddress);
 		//TODO Auto-generated constructor stub
 	}
+
 }

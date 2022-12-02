@@ -2,23 +2,22 @@ package AddressBook;
 
 import java.util.*;
 
-public class AddressBookMain{
+public class AddressBookMain {
 	public static void main(String[] args){
-
+		List<Person> p = new ArrayList<Person>();
 		//Scanner scan = new Scanner(System.in);
 		char menuChoice = '\n';
 
 		
 		do{
 			menuChoice = menuOperationSelection().charAt(0);
-			processChoice(menuChoice);
+			processChoice(menuChoice,p);
 		} while(menuChoice != 'X');
 
 	}
 
-	public static String processChoice(char menuChoice){
+	public static String processChoice(char menuChoice,List<Person> p){
 		String s = "FIX ME";
-		Collection<Person> p = new ArrayList<Person>();
 		String pName = "\n";
 		String pEmail = "\n";
 		String pAddress = "\n";
@@ -38,27 +37,27 @@ public class AddressBookMain{
 			case 'C':
 				System.out.println("Please enter the following information:");
 				System.out.println("Full Name:");
-				pName = sScan.nextLine();
+				pName = "pName"; //sScan.nextLine();
 				System.out.println("Age:");
-				pAge = iScan.nextInt();
+				pAge = -1;//iScan.nextInt();
 				System.out.println("Email:");
-				pEmail = sScan.nextLine();
+				pEmail = "p@email.com";//sScan.nextLine();
 				System.out.println("Phone Number:");
-				pPhoneNum = sScan.nextLine();
+				pPhoneNum = "pNumber";//sScan.nextLine();
 				System.out.println("Home Address:");
-				pAddress = sScan.nextLine();
+				pAddress = "pAddressc";//sScan.nextLine();
 				personChoice = menuTypeSelection().charAt(0);
 				switch (personChoice){
 
-					case 'F':
+					case 'S':
 						System.out.println("Student ID:");
 						sID = iScan.nextInt();
 						System.out.println("Student GPA:");
 						sGPA = iScan.nextInt();
-						//p.add(new Student(fullName, age, email, phoneNum, address, sID,  sGPA));
+						//p.add(new Student(pAge,pEmail , pAddress, pName, pPhoneNum, sID,  sGPA));
 						break;
 
-					case 'S':
+					case 'F':
 						System.out.println("Salary:");
 						fSalary = iScan.nextInt();
 						System.out.println("Job Title:");
@@ -73,7 +72,11 @@ public class AddressBookMain{
 				break;
 
 			case 'V':
-				System.out.print(p);
+				System.out.println(p);
+				//System.out.print(p);
+				//for (Person pr : p){
+				//	System.out.print(pr.toString());
+				//}
 				break;
 			
 		}

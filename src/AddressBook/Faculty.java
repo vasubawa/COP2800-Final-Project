@@ -4,15 +4,13 @@ import java.util.*;
 
 public class Faculty extends Person
 {
-	public Faculty(int age, String userEmail, String userAddress, String userName, int userPhoneNum) {
-		super(age, userEmail, userAddress, userName, userPhoneNum);
+	public Faculty(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress) {
+		super(pName, pAge, pEmail, pPhoneNum, pAddress);
 		//TODO Auto-generated constructor stub
 	}
+	
 	private double Salary;
-
-
-
-
+	
 	public final void setSalary(double value)
 	{
 		Salary = value;
