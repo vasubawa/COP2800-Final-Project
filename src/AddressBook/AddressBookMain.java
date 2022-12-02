@@ -23,6 +23,7 @@ public class AddressBookMain {
 		String pAddress = "\n";
 		long pPhoneNum = -1;
 		int pAge = -1;
+		String pID = "\n";
 
 		char personChoice;
 		float sGPA = -1;
@@ -61,6 +62,9 @@ public class AddressBookMain {
 			System.out.println("Home Address:");
 			pAddress = "pAddress";// sScan.nextLine();
 
+			System.out.println("Enter ID:");
+			pID = sScan.nextLine();
+
 			// person.setName(pName);
 			// person.setAge(pAge);
 			// person.setEmail(pEmail);
@@ -87,7 +91,7 @@ public class AddressBookMain {
 				break;
 
 			default:
-				list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress));
+				list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				// list.add(person);
 				break;
 			}
@@ -98,27 +102,26 @@ public class AddressBookMain {
 			break;
 
 		case 'U':
-			
+
 			break;
 
 		case 'D':
 			// delete contact using ID
 			System.out.print("\nEnter ID : ");
+			String id = sScan.next();
 
-			String id =sScan.next();
-			for(int i=0;i<list.size();i++) {
-			//	if(list.get(i).getID()==id){
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i).getID() == id) {
 					list.remove(i);
 					System.out.println("Person is deleted .");
 					break;
 				}
-			//}
-			
+			}
 
 		case 'V':
-			//System.out.println("Name\tAge\tEmail\tPhone Number\tHome Address");
+			// System.out.println("Name\tAge\tEmail\tPhone Number\tHome Address");
 			for (int i = 0; i < list.size(); i++) {
-				System.out.println((i + 1) + ": ");
+				// System.out.print((i + 1) + ": ");
 				System.out.println(list.get(i));
 			}
 			// System.out.println("\nContact " + (i + 1) + "\n");
