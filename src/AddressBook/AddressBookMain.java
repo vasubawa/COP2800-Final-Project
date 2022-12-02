@@ -30,7 +30,6 @@ public class AddressBookMain {
 		String fTitle = "\n";
 		int fSalary = -1;
 
-		Iterator iterate = list.iterator();
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
 
@@ -93,9 +92,33 @@ public class AddressBookMain {
 				break;
 			}
 			break;
+
+		case 'R':
+
+			break;
+
+		case 'U':
+			
+			break;
+
+		case 'D':
+			// delete contact using ID
+			System.out.print("\nEnter ID : ");
+
+			String id =sScan.next();
+			for(int i=0;i<list.size();i++) {
+			//	if(list.get(i).getID()==id){
+					list.remove(i);
+					System.out.println("Person is deleted .");
+					break;
+				}
+			//}
+			
+
 		case 'V':
-			System.out.println("Name | Age | Email | Phone Number | Home Address |");
+			//System.out.println("Name\tAge\tEmail\tPhone Number\tHome Address");
 			for (int i = 0; i < list.size(); i++) {
+				System.out.println((i + 1) + ": ");
 				System.out.println(list.get(i));
 			}
 			// System.out.println("\nContact " + (i + 1) + "\n");
@@ -118,7 +141,7 @@ public class AddressBookMain {
 		System.out.println("(R)etrieve");
 		System.out.println("(U)pdate");
 		System.out.println("(D)elete");
-		System.out.println("(V)iew:");
+		System.out.println("(V)iew");
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String menuChoice = scnr.next().toUpperCase();

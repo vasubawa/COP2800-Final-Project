@@ -1,7 +1,5 @@
 package AddressBook;
 
-import java.util.*;
-
 public class Student extends Person
 {
 

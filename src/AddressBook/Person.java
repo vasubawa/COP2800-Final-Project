@@ -1,7 +1,5 @@
 package AddressBook;
 
-import java.util.*;
-
 public class Person {
 
 	private int age;
@@ -83,6 +81,7 @@ public class Person {
 
 	@Override
 	public String toString() {
+		//return getName() + "\t" + getAge() + "\t" + getEmail() + "\t" + getPhoneNum() + "\t" + getAddress();
 		return "Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail() + ", PhoneNumber: "
 				+ getPhoneNum() + ", Address: " + getAddress();
 	}
