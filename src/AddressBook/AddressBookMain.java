@@ -94,6 +94,7 @@ public class AddressBookMain {
 			}
 			break;
 		case 'V':
+			System.out.println("Name | Age | Email | Phone Number | Home Address |");
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i));
 			}
