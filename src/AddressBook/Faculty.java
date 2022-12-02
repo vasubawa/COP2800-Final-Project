@@ -8,6 +8,8 @@ public class Faculty extends Person
 
 
 
+	public Faculty(String fullName, int age, String email, int phoneNum, String address) {
+	}
 
 	public final void setSalary(double value)
 	{
@@ -24,7 +26,11 @@ public class Faculty extends Person
 		System.out.println("Enter Faculty's Salary:");
 		setSalary(Double.parseDouble(new Scanner(System.in).nextLine()));
 	}
-	@Override
+	
+	public Faculty(String fullName, int age, String email, int phoneNum, String address, int fSalary, String fTitle) {
+    }
+
+    @Override
 	public void Update()
 	{
 		System.out.println("Updating Faculty Details");

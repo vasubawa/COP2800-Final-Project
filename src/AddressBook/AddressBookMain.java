@@ -2,8 +2,7 @@ package AddressBook;
 
 import java.util.*;
 
-public class AddressBookMain
-{
+public class AddressBookMain{
 	public static void main(String[] args){
 
 		//Scanner scan = new Scanner(System.in);
@@ -19,14 +18,19 @@ public class AddressBookMain
 
 	public static String processChoice(char menuChoice){
 		String s = "FIX ME";
-		int age = -1;
+		Collection<Person> p = new ArrayList<Person>();
 		String fullName = "\n";
 		String email = "\n";
 		String address = "\n";
-		int phoneNum = -1;
+		String fTitle = "\n";
 		char personChoice;
+		int age = -1;
 		int sID = -1;
+		int phoneNum = -1;
+		int fSalary = -1;
 		float sGPA = -1;
+		
+
 		Scanner scan = new Scanner(System.in);
 
 		switch (menuChoice){
@@ -44,16 +48,27 @@ public class AddressBookMain
 				address = scan.nextLine();
 				personChoice = menuTypeSelection().charAt(0);
 				switch (personChoice){
+
 					case 'F':
 						System.out.println("Student ID:");
 						sID = scan.nextInt();
 						System.out.println("Student GPA:");
 						sGPA = scan.nextInt();
+						p.add(new Student(fullName, age, email, phoneNum, address, sID,  sGPA));
 						break;
-					case 'S':
 
+					case 'S':
+						System.out.println("Salary:");
+						fSalary = scan.nextInt();
+						System.out.println("Job Title:");
+						fTitle = scan.nextLine();
+						p.add(new Faculty(fullName, age, email, phoneNum, address, fSalary,  fTitle));
 						break;
+
+					case 'V':
+						System.out.print(p);
 					default:
+					p.add(new Faculty(fullName, age, email, phoneNum, address));
 						break;
 				}
 				break;
@@ -69,6 +84,7 @@ public class AddressBookMain
 		System.out.println("(R)etrieve");
 		System.out.println("(U)pdate");
 		System.out.println("(D)elete");
+		System.out.println("(V)iew:");
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String menuChoice = scnr.next().toUpperCase();

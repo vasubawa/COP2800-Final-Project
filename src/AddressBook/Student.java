@@ -4,7 +4,10 @@ import java.util.*;
 
 public class Student extends Person
 {
-	private int Class;
+
+	public Student(String fullName, int age, String email, int phoneNum, String address, int sID, float sGPA) {
+		
+	}
 	public final int getClass()
 	{
 		return Class;
@@ -19,6 +22,7 @@ public class Student extends Person
 		System.out.println("Enter Student's Class :");
 		setClass(Integer.parseInt(new Scanner(System.in).nextLine()));
 	}
+	
 	@Override
 	public void Print()
 	{
