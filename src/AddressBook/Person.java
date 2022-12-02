@@ -2,7 +2,7 @@ package AddressBook;
 
 import java.util.*;
 
-public class Person{
+public class Person {
 
 	private int age;
 	private String email;
@@ -13,26 +13,26 @@ public class Person{
 	public Person() {
 		this("Unknown", -1, "Unknown", -1, "Unknown");
 	}
-	
+
 	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress) {
 		setName(pName);
 		setAge(pAge);
 		setEmail(pEmail);
 		setPhoneNum(pPhoneNum);
 		setAddress(pAddress);
-    }
-	
+	}
 
-	public void setAddress(String pAddress){
+	public void setAddress(String pAddress) {
 		address = pAddress;
 	}
-	public String getAddress(){
+
+	public String getAddress() {
 		return address;
 	}
 
-    public void setAge(int pAge){
-		if (age > 0) { 
-			this.age = pAge; 
+	public void setAge(int pAge) {
+		if (age > 0) {
+			this.age = pAge;
 		}
 	}
 
@@ -56,34 +56,34 @@ public class Person{
 		}
 		return (ret);
 	}
-	
+
 	public void setEmail(String pEmail) {
 		this.email = pEmail;
 	}
-	
-	public String getEmail(){
+
+	public String getEmail() {
 		return email;
 	}
-	
-	public void setName(String pName){
+
+	public void setName(String pName) {
 		name = pName;
 	}
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
 
-	public void setPhoneNum(long pPhoneNum){
+	public void setPhoneNum(long pPhoneNum) {
 		phoneNum = pPhoneNum;
 	}
-	public long getPhoneNum(){
+
+	public long getPhoneNum() {
 		return phoneNum;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail() + ", PhoneNumber: " + getPhoneNum() + ", Address: " + getAddress();
-		//return "Person [age=" + age + ", email=" + email + ", address=" + address + ", name=" + name + ", phoneNum="
-		//		+ phoneNum + "]";
+		return "Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail() + ", PhoneNumber: "
+				+ getPhoneNum() + ", Address: " + getAddress();
 	}
 }
-
