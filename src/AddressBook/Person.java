@@ -79,14 +79,11 @@ public class Person{
 		return phoneNum;
 	}
 	
-	
-	
-	
-
 	@Override
-	public String toString()
-	{
-		return "Person [Name:" + getName() + ", Age:" + getAge() + ", Email:" + getEmail() + ", Phone Number:" + getPhoneNum() + ", Home Address:" + getAddress() + "]";
+	public String toString() {
+		return "Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail() + ", PhoneNumber: " + getPhoneNum() + ", Address: " + getAddress();
+		//return "Person [age=" + age + ", email=" + email + ", address=" + address + ", name=" + name + ", phoneNum="
+		//		+ phoneNum + "]";
 	}
 }
 
