@@ -1,4 +1,4 @@
-package addressbook;
+package AddressBook;
 
 import java.util.*;
 
