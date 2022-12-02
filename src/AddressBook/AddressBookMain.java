@@ -19,58 +19,61 @@ public class AddressBookMain{
 	public static String processChoice(char menuChoice){
 		String s = "FIX ME";
 		Collection<Person> p = new ArrayList<Person>();
-		String fullName = "\n";
-		String email = "\n";
-		String address = "\n";
-		String fTitle = "\n";
-		char personChoice;
-		int age = -1;
-		int sID = -1;
-		int phoneNum = -1;
-		int fSalary = -1;
-		float sGPA = -1;
+		String pName = "\n";
+		String pEmail = "\n";
+		String pAddress = "\n";
+		String pPhoneNum = "\n";
+		int pAge = -1;
 		
+		char personChoice;
+		float sGPA = -1;
+		int sID = -1;
+		String fTitle = "\n";
+		int fSalary = -1;
 
-		Scanner scan = new Scanner(System.in);
+		Scanner sScan = new Scanner(System.in);
+		Scanner iScan = new Scanner(System.in);
 
 		switch (menuChoice){
 			case 'C':
 				System.out.println("Please enter the following information:");
 				System.out.println("Full Name:");
-				fullName = scan.nextLine();
+				pName = sScan.nextLine();
 				System.out.println("Age:");
-				age = scan.nextInt();
+				pAge = iScan.nextInt();
 				System.out.println("Email:");
-				email = scan.nextLine();
+				pEmail = sScan.nextLine();
 				System.out.println("Phone Number:");
-				phoneNum = scan.nextInt();
+				pPhoneNum = sScan.nextLine();
 				System.out.println("Home Address:");
-				address = scan.nextLine();
+				pAddress = sScan.nextLine();
 				personChoice = menuTypeSelection().charAt(0);
 				switch (personChoice){
 
 					case 'F':
 						System.out.println("Student ID:");
-						sID = scan.nextInt();
+						sID = iScan.nextInt();
 						System.out.println("Student GPA:");
-						sGPA = scan.nextInt();
-						p.add(new Student(fullName, age, email, phoneNum, address, sID,  sGPA));
+						sGPA = iScan.nextInt();
+						//p.add(new Student(fullName, age, email, phoneNum, address, sID,  sGPA));
 						break;
 
 					case 'S':
 						System.out.println("Salary:");
-						fSalary = scan.nextInt();
+						fSalary = iScan.nextInt();
 						System.out.println("Job Title:");
-						fTitle = scan.nextLine();
-						p.add(new Faculty(fullName, age, email, phoneNum, address, fSalary,  fTitle));
+						fTitle = sScan.nextLine();
+						//p.add(new Faculty(fullName, age, email, phoneNum, address, fSalary,  fTitle));
 						break;
 
-					case 'V':
-						System.out.print(p);
 					default:
-					p.add(new Faculty(fullName, age, email, phoneNum, address));
+					p.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress));
 						break;
 				}
+				break;
+
+			case 'V':
+				System.out.print(p);
 				break;
 			
 		}
@@ -88,7 +91,6 @@ public class AddressBookMain{
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String menuChoice = scnr.next().toUpperCase();
-		scnr.close();
 		return menuChoice;
 	}
 	public static String menuTypeSelection(){
@@ -99,7 +101,6 @@ public class AddressBookMain{
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String type = scnr.nextLine().toUpperCase();
-		scnr.close();
 		return type;
 	}
 }

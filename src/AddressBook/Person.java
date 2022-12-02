@@ -8,33 +8,33 @@ public class Person
 	private String email;
 	private String address;
 	private String name;
-	private int phoneNum;
+	private String phoneNum;
 
+	public Person(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress) {
+		this.name = pName;
+		this.age = pAge;
+		this.email = pEmail;
+		this.phoneNum = pPhoneNum;
+		this.address = pAddress;
+    }
 
-	public Person(int age, String userEmail, String userAddress, String userName, int userPhoneNum){
-		setAge(-1);
-		setEmail("Unknown");
-		setAddress("Unknown");
-		setName("Unknown");
-		setPhoneNum(-1);
+	public void setAddress(String pAddress){
+		address = pAddress;
 	}
-
-	public void setAge(int userAge){
+    public void setAge(int pAge){
 		if (age > 0) { 
-			this.age = userAge; 
+			this.age = pAge; 
 		}
 	}
-	public void setEmail(String userEmail){
-		email = userEmail;
+	public void setEmail(String pEmail){
+		email = pEmail;
 	}
-	public void setAddress(String userAddress){
-		address = userAddress;
+	
+	public void setName(String pName){
+		name = pName;
 	}
-	public void setName(String userName){
-		name = userName;
-	}
-	public void setPhoneNum(int userPhoneNum){
-		phoneNum = userPhoneNum;
+	public void setPhoneNum(String pPhoneNum){
+		phoneNum = pPhoneNum;
 	}
 	
 	public int getAge(){
@@ -49,7 +49,7 @@ public class Person
 	public String getName(){
 		return name;
 	}
-	public int getPhoneNum(){
+	public String getPhoneNum(){
 		return phoneNum;
 	}
 

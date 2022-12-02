@@ -4,12 +4,14 @@ import java.util.*;
 
 public class Faculty extends Person
 {
+	public Faculty(int age, String userEmail, String userAddress, String userName, int userPhoneNum) {
+		super(age, userEmail, userAddress, userName, userPhoneNum);
+		//TODO Auto-generated constructor stub
+	}
 	private double Salary;
 
 
 
-	public Faculty(String fullName, int age, String email, int phoneNum, String address) {
-	}
 
 	public final void setSalary(double value)
 	{
@@ -20,30 +22,5 @@ public class Faculty extends Person
 		return Salary;
 	}
 
-	public Faculty(String _PhoneNum)
-	{
-		super(_PhoneNum);
-		System.out.println("Enter Faculty's Salary:");
-		setSalary(Double.parseDouble(new Scanner(System.in).nextLine()));
-	}
-	
-	public Faculty(String fullName, int age, String email, int phoneNum, String address, int fSalary, String fTitle) {
-    }
-
-    @Override
-	public void Update()
-	{
-		System.out.println("Updating Faculty Details");
-		super.Update();
-		System.out.println(String.format("old value of Salary : %1$s, please enter new value !", getSalary()));
-		setSalary(Double.parseDouble(new Scanner(System.in).nextLine()));
-	}
-	@Override
-	public void Print()
-	{
-		System.out.println("Printing Faculty Details");
-		super.Print();
-		System.out.println(String.format("Salary: %1$s", getSalary()));
-	}
 
 }
