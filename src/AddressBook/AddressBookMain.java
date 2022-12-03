@@ -15,8 +15,6 @@ public class AddressBookMain {
 			processChoice(menuChoice, list);
 		} while (menuChoice != 'X');
 
-		System.out.println("Thank you for using Team 2's Address Book");
-
 	}
 
 	public static void processChoice(char menuChoice, ArrayList<Person> list) {
@@ -27,6 +25,7 @@ public class AddressBookMain {
 		// int pAge = -1;
 		int pID = -1;
 
+		boolean cSelected = false;
 		char personChoice;
 		float sGPA = -1;
 		int sID = -1;
@@ -37,8 +36,8 @@ public class AddressBookMain {
 		int dID = -1;
 
 		Iterator<Person> iterList = list.iterator();
-		switch (menuChoice) {
-		case 'C':
+		if (menuChoice == 'C') {
+			cSelected = true;
 			// Person person = new Person();
 			Person cTemp = createInput(found, list);
 			personChoice = menuTypeSelection().charAt(0);
@@ -64,10 +63,7 @@ public class AddressBookMain {
 				// list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				break;
 			}
-
-			break;
-
-		case 'R':
+		} else if (menuChoice == 'R' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID : ");
 			dID = scnr.nextInt();
@@ -82,9 +78,7 @@ public class AddressBookMain {
 				}
 
 			}
-			break;
-
-		case 'U':
+		} else if (menuChoice == 'U' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID To Update: ");
 			dID = scnr.nextInt();
@@ -106,9 +100,7 @@ public class AddressBookMain {
 				}
 
 			}
-			break;
-
-		case 'D':
+		} else if (menuChoice == 'D' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID To Delete: ");
 			dID = scnr.nextInt();
@@ -126,19 +118,17 @@ public class AddressBookMain {
 				}
 
 			}
-			break;
-
-		case 'V':
-
+		} else if (menuChoice == 'V' && cSelected == true) {
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
 				System.out.println(pView);
 			}
-			break;
-
-		default:
+		} else if (menuChoice == 'X') {
+			System.out.println("Thank you for using Team 2's Address Book");
+		} else {
 			System.out.println("Please enter one of the option from the menu!");
 		}
+
 	}
 
 	public static Person createInput(boolean found, ArrayList<Person> list) {
