@@ -8,7 +8,6 @@ public class AddressBookMain {
 
 		ArrayList<Person> list = new ArrayList<Person>();
 		boolean cSelected = false;
-		// Scanner scan = new Scanner(System.in);
 		char menuChoice = '\n';
 
 		do {
@@ -19,11 +18,7 @@ public class AddressBookMain {
 	}
 
 	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
-		// String pName = "\n";
-		// String pEmail = "\n";
-		// String pAddress = "\n";
-		// long pPhoneNum = -1;
-		// int pAge = -1;
+
 		int pID = -1;
 
 		char personChoice;
@@ -198,8 +193,7 @@ public class AddressBookMain {
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nSelect person type to process, otherwise press enter any key to exit:\n");
 		System.out.println("(F)aculty");
-		System.out.println("(S)tudent");
-		System.out.println("E(X)it\n");
+		System.out.println("(S)tudent\n");
 		System.out.print("Choice: ");
 		String type = scnr.nextLine().toUpperCase();
 		return type;
