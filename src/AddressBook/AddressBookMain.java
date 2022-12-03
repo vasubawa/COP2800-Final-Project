@@ -65,7 +65,7 @@ public class AddressBookMain {
 
 		} else if (menuChoice == 'R' && cSelected) {
 			found = false;
-			System.out.print("\nEnter ID : ");
+			System.out.print("\nEnter ID: ");
 			dID = scnr.nextInt();
 			while (iterList.hasNext()) {
 				Person pRetrieve = iterList.next();
@@ -73,12 +73,12 @@ public class AddressBookMain {
 					System.out.println(pRetrieve);
 					found = true;
 				}
-				if (!found) {
+				if (found == false) {
 					System.out.println("Person does not exist.");
 				}
 
 			}
-		} else if ((menuChoice == 'U') & cSelected) {
+		} else if (menuChoice == 'U' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID To Update: ");
 			dID = scnr.nextInt();
@@ -88,17 +88,15 @@ public class AddressBookMain {
 				if (pUpdate.getID() == dID) {
 					Person uTemp = createInput(found, list);
 					iterList.remove();
-					// listIterator.set(uTemp);
 					list.add(uTemp);
 					found = true;
 				}
 				if (!found) {
-					System.out.println("Person does not exist.");
+					System.out.println("\nPerson does not exist.");
 				} else if (found) {
-					System.out.println("Person with that ID has been Update.");
+					System.out.println("\nPerson with that ID has been Update.");
 					break;
 				}
-
 			}
 		} else if (menuChoice == 'D' & cSelected) {
 			found = false;
@@ -110,15 +108,15 @@ public class AddressBookMain {
 					iterList.remove();
 					found = true;
 				}
-				if (!found) {
-					System.out.println("Person does not exist.");
-				} else if (found) {
-					System.out.println("Person with that ID has been deleted.");
-					break;
-				}
 
 			}
+			if (found == true) {
+				System.out.println("\nPerson with that ID has been deleted.");
+			} else {
+				System.out.println("\nPerson does not exist.");
+			}
 		} else if (menuChoice == 'V' & cSelected) {
+			System.out.println("");
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
 				System.out.println(pView);
@@ -143,32 +141,37 @@ public class AddressBookMain {
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
 
-		System.out.println("Please enter the following information:");
+		System.out.println("\nPlease enter the following information:");
 
-		System.out.print("Full Name:");
-		pName = sScan.nextLine();
+		System.out.print("\nFull Name: ");
+		// pName = sScan.nextLine();
+		pName = " my name";
 
-		System.out.print("Age:");
-		pAge = iScan.nextInt();
+		System.out.print("Age: ");
+		// pAge = iScan.nextInt();
+		pAge = 12;
 
 		do {
-			System.out.print("Email:");
-			pEmail = sScan.nextLine();
+			System.out.print("Email: ");
+			// pEmail = sScan.nextLine();
+			pEmail = "my@email.com";
 			if (Person.checkEmail(pEmail) == false) {
 				System.out.println("Email is not correct format.");
 			}
 		} while (Person.checkEmail(pEmail) == false);
 
-		System.out.print("Phone Number:");
-		pPhoneNum = iScan.nextInt();
+		System.out.print("Phone Number: ");
+		// pPhoneNum = iScan.nextInt();
+		pPhoneNum = 124324234;
 
 		// This is here because home address keeps getting skipped and no idea why
 		if (temp == false) {
-			System.out.print("Home Address:");
-			pAddress = sScan.nextLine();
+			System.out.print("Home Address: ");
+			// pAddress = sScan.nextLine();
+			pAddress = "my home address ";
 			temp = true;
 		}
-		System.out.print("ID Number:");
+		System.out.print("ID Number: ");
 		pID = iScan.nextInt();
 
 		asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
@@ -193,7 +196,7 @@ public class AddressBookMain {
 
 	public static String menuTypeSelection() {
 		Scanner scnr = new Scanner(System.in);
-		System.out.println("\nSelect person type to process(if any):\n");
+		System.out.println("\nSelect person type to process, otherwise press enter any key to exit:\n");
 		System.out.println("(F)aculty");
 		System.out.println("(S)tudent");
 		System.out.println("E(X)it\n");
