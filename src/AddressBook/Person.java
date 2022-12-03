@@ -1,5 +1,7 @@
 package AddressBook;
 
+import java.util.ArrayList;
+
 public class Person {
 
 	private int age;
@@ -7,13 +9,13 @@ public class Person {
 	private String address;
 	private String name;
 	private long phoneNum;
-	private String ID;
+	private int ID;
 
 	public Person() {
-		this("Unknown", -1, "Unknown", -1, "Unknown", "Unknown");
+		this("Unknown", -1, "Unknown", -1, "Unknown", -1);
 	}
 
-	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress, String pID) {
+	public Person(String pName, int pAge, String pEmail, long pPhoneNum, String pAddress, int pID) {
 		setName(pName);
 		setAge(pAge);
 		setEmail(pEmail);
@@ -47,9 +49,8 @@ public class Person {
 		int index1 = pEmail.indexOf('@');
 		int index2 = pEmail.lastIndexOf('.');
 
-		// if both character exist
+		// Checks if both character exist
 		if (index1 != -1 && index2 != -1) {
-			// check character '@' before '.'
 			if (index1 < index2) {
 				ret = true;
 			}
@@ -65,11 +66,15 @@ public class Person {
 		return email;
 	}
 
-	public void setID(String pID) {
+	public static void checkID(String pID) {
+
+	}
+
+	public void setID(int pID) {
 		this.ID = pID;
 	}
 
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 

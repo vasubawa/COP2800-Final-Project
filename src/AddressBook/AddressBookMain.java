@@ -1,6 +1,7 @@
 package AddressBook;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AddressBookMain {
 	public static void main(String[] args) {
@@ -14,6 +15,8 @@ public class AddressBookMain {
 			processChoice(menuChoice, list);
 		} while (menuChoice != 'X');
 
+		System.out.println("Thank you for using Team 2's Address Book");
+
 	}
 
 	public static void processChoice(char menuChoice, ArrayList<Person> list) {
@@ -23,8 +26,8 @@ public class AddressBookMain {
 		String pAddress = "\n";
 		long pPhoneNum = -1;
 		int pAge = -1;
-		String pID = "\n";
-		String id = "";
+		int pID = -1;
+		int id = -1;
 
 		char personChoice;
 		float sGPA = -1;
@@ -32,9 +35,12 @@ public class AddressBookMain {
 		String fTitle = "\n";
 		int fSalary = -1;
 
+		boolean found = false;
+		int dID = -1;
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
 
+		Iterator<Person> iterList = list.iterator();
 		switch (menuChoice) {
 		case 'C':
 			// Person person = new Person();
@@ -63,14 +69,8 @@ public class AddressBookMain {
 			System.out.println("Home Address:");
 			pAddress = "pAddress";// sScan.nextLine();
 
-			System.out.println("ID:");
-			pID = sScan.nextLine();
-
-			// person.setName(pName);
-			// person.setAge(pAge);
-			// person.setEmail(pEmail);
-			// person.setPhoneNum(pPhoneNum);
-			// person.setAddress(pAddress);
+			System.out.println("ID Number:");
+			pID = sScan.nextInt();
 
 			personChoice = menuTypeSelection().charAt(0);
 			switch (personChoice) {
@@ -93,56 +93,80 @@ public class AddressBookMain {
 
 			default:
 				list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
+				list.add(new Person("Unknown", -1, "Unknown", -1, "Unknown", -1));
 				// list.add(person);
 				break;
 			}
 			break;
 
 		case 'R':
+			found = false;
 			System.out.print("\nEnter ID : ");
-
-			id = sScan.next();
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i).getID().endsWith(id)) {
-					System.out.println(list.get(i));
-					break;
+			dID = iScan.nextInt();
+			while (iterList.hasNext()) {
+				Person pRetrieve = iterList.next();
+				if (pRetrieve.getID() == dID) {
+					System.out.println(pRetrieve);
+					found = true;
 				}
+				if (!found) {
+					System.out.println("Person does not exist.");
+				}
+
 			}
 			break;
 
 		case 'U':
+			found = false;
+			System.out.print("\nEnter ID To Update: ");
+			dID = iScan.nextInt();
+			ListIterator<Person> listIterator = list.listIterator();
+			while (listIterator.hasNext()) {
+				Person pUpdate = iterList.next();
+				if (pUpdate.getID() == dID) {
+					iterList.remove();
+					found = true;
+				}
+				if (!found) {
+					System.out.println("Person does not exist.");
+				} else if (found) {
+					System.out.println("Person with that ID has been deleted.");
+					break;
+				}
 
+			}
 			break;
 
 		case 'D':
-			// delete contact using ID
-			System.out.print("\nEnter ID : ");
-			id = sScan.next();
-
-			for (int i = 0; i < list.size(); i++) {
-				list.get(i);
-				if (list.get(i).getID() == id) {
-					list.remove(i);
-					System.out.println("Person is deleted .");
+			found = false;
+			System.out.print("\nEnter ID To Delete: ");
+			dID = iScan.nextInt();
+			while (iterList.hasNext()) {
+				Person pDelete = iterList.next();
+				if (pDelete.getID() == dID) {
+					iterList.remove();
+					found = true;
+				}
+				if (!found) {
+					System.out.println("Person does not exist.");
+				} else if (found) {
+					System.out.println("Person with that ID has been deleted.");
 					break;
 				}
+
 			}
+			break;
 
 		case 'V':
-			// System.out.println("Name\tAge\tEmail\tPhone Number\tHome Address");
-			for (int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i));
+
+			while (iterList.hasNext()) {
+				Person pView = iterList.next();
+				System.out.println(pView);
 			}
-			// System.out.println("\nContact " + (i + 1) + "\n");
-			/*
-			 * //System.out.println(p); while (iterate.hasNext()) { Object pTemp =
-			 * iterate.next(); System.out.println(pTemp); }
-			 */
-			// System.out.print(p);
-			// for (Person pr : p){
-			// System.out.print(pr.toString());
-			// }asdasdasdasd
 			break;
+
+		default:
+			System.out.println("Please enter one of the option from the menu!");
 		}
 	}
 
