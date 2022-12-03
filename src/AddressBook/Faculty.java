@@ -3,6 +3,9 @@ package AddressBook;
 public class Faculty extends Person
 {
 
+	public Faculty(Person createInput, int fSalary, String fTitle) {
+	}
+
 	/*
 	private double Salary;
 	
