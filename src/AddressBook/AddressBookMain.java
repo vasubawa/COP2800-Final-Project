@@ -1,5 +1,28 @@
+/*
+ * File Name:	addressbook.java
+ * Names:	Mohammed Khan, Emanuel Martins, Dhruv Sharma, and Hammad Uddin
+ * Course:	COP 2800C at Valencia College
+ * Professor:	David Stendel 
+ * Description:	This program allows the user to create, retrieve, update, delete, and view contacts in an address book.
+ *		The program displays a menu that lists an option for the user to choose from:
+ *		Create:		Allows the user to create a contact.
+ *		Retrieve: 	Allows the user to retrieve a contact.
+ *		Update:		Allows the user to update a contact.
+ *		Delete:		Allows the user to delete a contact.
+ *		View:		Allows the user to view a contact.
+ *		Exit:		Allows the user exit from the program.
+ *		The program also includes one Person class and two subclasses, Faculty, and Student that extend from the Person class.
+ *		The Person class allows the user to enter the following information:
+ *		Name, age, email, phone number, home address, ID.
+ *		The Faculty class allows the user to enter salary.
+ *		The Student class allows the user to enter GPA.
+ *		The program also displays an error message when an invalid input is entered.	
+ * Date:	12/3/22
+ */
+
 package AddressBook;
 
+// Packages
 import java.util.*;
 
 public class AddressBookMain {
