@@ -7,17 +7,18 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 
 		ArrayList<Person> list = new ArrayList<Person>();
+		boolean cSelected = false;
 		// Scanner scan = new Scanner(System.in);
 		char menuChoice = '\n';
 
 		do {
 			menuChoice = menuOperationSelection().charAt(0);
-			processChoice(menuChoice, list);
+			cSelected = processChoice(menuChoice, list, cSelected);
 		} while (menuChoice != 'X');
 
 	}
 
-	public static void processChoice(char menuChoice, ArrayList<Person> list) {
+	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
 		// String pName = "\n";
 		// String pEmail = "\n";
 		// String pAddress = "\n";
@@ -25,7 +26,6 @@ public class AddressBookMain {
 		// int pAge = -1;
 		int pID = -1;
 
-		boolean cSelected = false;
 		char personChoice;
 		float sGPA = -1;
 		int sID = -1;
@@ -42,7 +42,6 @@ public class AddressBookMain {
 			Person cTemp = createInput(found, list);
 			personChoice = menuTypeSelection().charAt(0);
 			switch (personChoice) {
-
 			case 'S':
 				System.out.println("Student GPA:");
 				sGPA = scnr.nextInt();
@@ -63,7 +62,8 @@ public class AddressBookMain {
 				// list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				break;
 			}
-		} else if (menuChoice == 'R' && cSelected == true) {
+
+		} else if (menuChoice == 'R' && cSelected) {
 			found = false;
 			System.out.print("\nEnter ID : ");
 			dID = scnr.nextInt();
@@ -78,7 +78,7 @@ public class AddressBookMain {
 				}
 
 			}
-		} else if (menuChoice == 'U' && cSelected == true) {
+		} else if ((menuChoice == 'U') & cSelected) {
 			found = false;
 			System.out.print("\nEnter ID To Update: ");
 			dID = scnr.nextInt();
@@ -100,7 +100,7 @@ public class AddressBookMain {
 				}
 
 			}
-		} else if (menuChoice == 'D' && cSelected == true) {
+		} else if (menuChoice == 'D' & cSelected) {
 			found = false;
 			System.out.print("\nEnter ID To Delete: ");
 			dID = scnr.nextInt();
@@ -118,7 +118,7 @@ public class AddressBookMain {
 				}
 
 			}
-		} else if (menuChoice == 'V' && cSelected == true) {
+		} else if (menuChoice == 'V' & cSelected) {
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
 				System.out.println(pView);
@@ -128,7 +128,7 @@ public class AddressBookMain {
 		} else {
 			System.out.println("\nPlease enter one of the option from the menu!");
 		}
-
+		return cSelected;
 	}
 
 	public static Person createInput(boolean found, ArrayList<Person> list) {
@@ -139,35 +139,40 @@ public class AddressBookMain {
 		long pPhoneNum = -1;
 		int pAge = -1;
 		int pID = -1;
-
-		Scanner scnr = new Scanner(System.in);
+		boolean temp = false;
+		Scanner sScan = new Scanner(System.in);
+		Scanner iScan = new Scanner(System.in);
 
 		System.out.println("Please enter the following information:");
 
-		System.out.println("Full Name:");
-		pName = "pName"; // scnr.nextLine();
+		System.out.print("Full Name:");
+		pName = sScan.nextLine();
 
-		System.out.println("Age:");
-		pAge = -1;// scnr.nextInt();
+		System.out.print("Age:");
+		pAge = iScan.nextInt();
 
 		do {
-			System.out.println("Email:");
-			pEmail = "p@email.com"; // scnr.next();
+			System.out.print("Email:");
+			pEmail = sScan.nextLine();
 			if (Person.checkEmail(pEmail) == false) {
 				System.out.println("Email is not correct format.");
 			}
 		} while (Person.checkEmail(pEmail) == false);
 
-		System.out.println("Phone Number:");
-		pPhoneNum = -1;// scnr.nextLine();
+		System.out.print("Phone Number:");
+		pPhoneNum = iScan.nextInt();
 
-		System.out.println("Home Address:");
-		pAddress = "pAddress";// scnr.nextLine();
+		// This is here because home address keeps getting skipped and no idea why
+		if (temp == false) {
+			System.out.print("Home Address:");
+			pAddress = sScan.nextLine();
+			temp = true;
+		}
+		System.out.print("ID Number:");
+		pID = iScan.nextInt();
 
-		System.out.println("ID Number:");
-		pID = scnr.nextInt();
-
-		asdf = new Person("Unknown", -1, "Unknown", -1, "Unknown", pID);
+		asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
+		// asdf = new Person("Unknown", -1, "Unknown", -1, "Unknown", pID);
 
 		return asdf;
 	}
