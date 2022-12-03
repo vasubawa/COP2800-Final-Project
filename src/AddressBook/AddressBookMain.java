@@ -124,9 +124,9 @@ public class AddressBookMain {
 				System.out.println(pView);
 			}
 		} else if (menuChoice == 'X') {
-			System.out.println("Thank you for using Team 2's Address Book");
+			System.out.println("\nThank you for using Team 2's Address Book");
 		} else {
-			System.out.println("Please enter one of the option from the menu!");
+			System.out.println("\nPlease enter one of the option from the menu!");
 		}
 
 	}

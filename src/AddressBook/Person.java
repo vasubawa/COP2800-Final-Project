@@ -1,7 +1,5 @@
 package AddressBook;
 
-import java.util.ArrayList;
-
 public class Person {
 
 	private int age;
