@@ -27,9 +27,10 @@ package AddressBook;
 
 // Packages
 import java.util.*;
+
 /**
- * This program is an address book displays a menu that allows the user to create, 
- * retrieve, update, delete, view, and exit the program.
+ * This program is an address book displays a menu that allows the user to
+ * create, retrieve, update, delete, view, and exit the program.
  *
  * @author Mohammed Khan
  * @author Emanuel Martins
@@ -73,10 +74,10 @@ public class AddressBookMain {
 
 	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
 		/**
-		 * This method allows the program to intake the input by the user and run it through
-		 * the if-else and switch statements.
+		 * This method allows the program to intake the input by the user and run it
+		 * through the if-else and switch statements.
 		 * 
-		 * @return the choice selected by the user from the option menu. 
+		 * @return the choice selected by the user from the option menu.
 		 */
 		// Declared variables.
 		boolean found = false;
@@ -90,20 +91,12 @@ public class AddressBookMain {
 			cSelected = true;
 			list.add(createInput(found, list));
 
+			// Retrieve option from menu options.
 		} else if (menuChoice == 'R' && cSelected) {
-			found = false;
-			System.out.print("\nEnter ID: ");
-			dID = scnr.nextInt();
+			System.out.println("");
 			while (iterList.hasNext()) {
-				Person pRetrieve = iterList.next();
-				if (pRetrieve.getID() == dID) {
-					System.out.println(pRetrieve);
-					found = true;
-				}
-				if (found == false) {
-					System.out.println("Person does not exist.");
-				}
-
+				Person pView = iterList.next();
+				System.out.println(pView);
 			}
 			// Update option from menu options.
 		} else if (menuChoice == 'U' && cSelected == true) {
@@ -144,13 +137,7 @@ public class AddressBookMain {
 			} else {
 				System.out.println("\nPerson does not exist.s");
 			}
-			// View option from menu options.
-		} else if (menuChoice == 'V' & cSelected) {
-			System.out.println("");
-			while (iterList.hasNext()) {
-				Person pView = iterList.next();
-				System.out.println(pView);
-			}
+
 			// Exit option from menu options.
 		} else if (menuChoice == 'X') {
 			System.out.println("\nThank you for using Team 2's Address Book!");
@@ -165,8 +152,8 @@ public class AddressBookMain {
 
 	public static Person createInput(boolean found, ArrayList<Person> list) {
 		/**
-		 * This method takes the input of the user for a person type once
-		 * the create option is selected from the menu.
+		 * This method takes the input of the user for a person type once the create
+		 * option is selected from the menu.
 		 */
 		Person asdf;
 		String pName = "\n";
@@ -210,7 +197,7 @@ public class AddressBookMain {
 		if (temp == false) {
 			System.out.print("Home Address: ");
 			pAddress = sScan.nextLine();
-			
+
 		}
 		System.out.print("ID Number: ");
 		pID = iScan.nextInt();
