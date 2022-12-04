@@ -1,4 +1,4 @@
-/*
+/**
  * File Name:	AddressBookMain.java
  * Names:	Mohammed Khan, Emanuel Martins, Dhruv Sharma, and Hammad Uddin
  * Course:	COP 2800C at Valencia College
