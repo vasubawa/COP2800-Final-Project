@@ -1,6 +1,12 @@
 package AddressBook;
 
 public class Student extends Person {
+	/**
+	 * This class contains the information that is required for Student
+	 * such as GPA.
+	 *
+	 *@return The input taken by user for GPA
+	 */
 
 	private float gpa;
 
