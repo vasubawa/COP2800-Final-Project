@@ -151,7 +151,7 @@ public class AddressBookMain {
 		String pPhoneNum = "\n";
 		int pAge = -1;
 		int pID = -1;
-		String sID = "\n";
+		float sGPA = -1;
 		boolean temp = false;
 		String fTitle = "\n";
 		String fSalary = "\n";
@@ -207,8 +207,8 @@ public class AddressBookMain {
 			asdf = new Faculty(pName, pAge, pEmail, pPhoneNum, pAddress, pID, fSalary, fTitle);
 		} else if (personChoice == 'S') {
 			System.out.println("Student ID:");
-			sID = iScan.nextLine();
-			asdf = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sID);
+			sGPA = iScan.nextFloat();
+			asdf = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sGPA);
 		} else {
 			asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 		}
