@@ -71,7 +71,7 @@ public class AddressBookMain {
 
 		Iterator<Person> iterList = list.iterator();
 		// If-else statement.
-		// Create selection from menu options.
+		// Create option from menu options.
 		if (menuChoice == 'C') {
 			cSelected = true;
 			// Person person = new Person();
@@ -99,7 +99,7 @@ public class AddressBookMain {
 				// list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				break;
 			}
-		// Retrieve selection from menu options.
+		// Retrieve option from menu options.
 		} else if (menuChoice == 'R' && cSelected) {
 			found = false;
 			System.out.print("\nEnter ID: ");
@@ -115,7 +115,7 @@ public class AddressBookMain {
 				}
 
 			}
-		// Update selection from menu options.
+		// Update option from menu options.
 		} else if (menuChoice == 'U' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID To Update: ");
@@ -136,7 +136,7 @@ public class AddressBookMain {
 					break;
 				}
 			}
-		// Delete selection from menu options.
+		// Delete option from menu options.
 		} else if (menuChoice == 'D' & cSelected) {
 			found = false;
 			System.out.print("\nEnter ID To Delete: ");
@@ -154,14 +154,14 @@ public class AddressBookMain {
 			} else {
 				System.out.println("\nPerson does not exist.");
 			}
-		// View selection from menu options.
+		// View option from menu options.
 		} else if (menuChoice == 'V' & cSelected) {
 			System.out.println("");
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
 				System.out.println(pView);
 			}
-		// Exit selection from menu options.
+		// Exit option from menu options.
 		} else if (menuChoice == 'X') {
 			System.out.println("\nThank you for using Team 2's Address Book");
 		} else {
@@ -170,7 +170,7 @@ public class AddressBookMain {
 		// Return the user selection from menu options.
 		return cSelected;
 	}
-
+	// Information intake of person once create option is selected from menu option.
 	public static Person createInput(boolean found, ArrayList<Person> list) {
 		Person asdf;
 		String pName = "\n";
@@ -192,7 +192,7 @@ public class AddressBookMain {
 		System.out.print("Age: ");
 		// pAge = iScan.nextInt();
 		pAge = 12;
-
+		// Displays error message when incorrect email format is entered
 		do {
 			System.out.print("Email: ");
 			// pEmail = sScan.nextLine();
@@ -221,7 +221,7 @@ public class AddressBookMain {
 
 		return asdf;
 	}
-
+	// Displays the menu options for user to select from.
 	public static String menuOperationSelection() {
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nAddressBook Menu\n");
@@ -233,9 +233,10 @@ public class AddressBookMain {
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String menuChoice = scnr.next().toUpperCase();
+		// Returns menu choice.
 		return menuChoice;
 	}
-
+	// Gives user option to select either faculty or student when create option is selected.
 	public static String menuTypeSelection() {
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nSelect person type to process, otherwise press enter any key to exit:\n");
@@ -243,6 +244,7 @@ public class AddressBookMain {
 		System.out.println("(S)tudent\n");
 		System.out.print("Choice: ");
 		String type = scnr.nextLine().toUpperCase();
+		// Returns user selection of person type.
 		return type;
 	}
 }
