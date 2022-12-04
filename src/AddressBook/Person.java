@@ -104,8 +104,6 @@ public class Person {
 	}
 
 	public String toString() {
-		// return getName() + "\t" + getAge() + "\t" + getEmail() + "\t" + getPhoneNum()
-		// + "\t" + getAddress();
 		return "ID: " + getID() + ", Name: " + getName() + ", Age: " + getAge() + ", Email: " + getEmail()
 				+ ", PhoneNumber: " + getPhoneNum() + ", Address: " + getAddress();
 	}
