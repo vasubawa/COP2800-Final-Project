@@ -10,7 +10,6 @@
  *		Retrieve: 	Allows the user to retrieve a contact.
  *		Update:		Allows the user to update a contact.
  *		Delete:		Allows the user to delete a contact.
- *		View:		Allows the user to view a contact.
  *		Exit:		Allows the user exit from the program.
  *		The program also includes one Person class and two subclasses, Faculty, and Student that 
  *		extend from the Person class.
@@ -30,7 +29,7 @@ import java.util.*;
 
 /**
  * This program is an address book displays a menu that allows the user to
- * create, retrieve, update, delete, view, and exit the program.
+ * create, retrieve, update, delete, and exit the program.
  *
  * @author Mohammed Khan
  * @author Emanuel Martins
@@ -154,6 +153,8 @@ public class AddressBookMain {
 		/**
 		 * This method takes the input of the user for a person type once the create
 		 * option is selected from the menu.
+		 *
+		 *@return A new person with the information entered by the user.
 		 */
 		Person asdf;
 		String pName = "\n";
@@ -180,7 +181,6 @@ public class AddressBookMain {
 			pAge = iScan.nextInt();
 		} while (pAge < 0);
 
-		// pAge = 12;
 		// Displays error message when incorrect email format is entered
 		do {
 			System.out.print("Email: ");
@@ -193,7 +193,6 @@ public class AddressBookMain {
 		System.out.print("Phone Number: ");
 		pPhoneNum = sScan.nextLine();
 
-		// This is here because home address keeps getting skipped and no idea why
 		if (temp == false) {
 			System.out.print("Home Address: ");
 			pAddress = sScan.nextLine();
@@ -225,15 +224,19 @@ public class AddressBookMain {
 		return asdf;
 	}
 
-	// Displays the menu options for user to select from.
 	public static String menuOperationSelection() {
+		/**
+		 * This method displays the menu options for the user and takes the input from
+		 * the user's choice.
+		 *
+		 *@return The user's choice from the option menu.
+		 */
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nAddressBook Menu\n");
 		System.out.println("(C)reate");
 		System.out.println("(R)etrieve");
 		System.out.println("(U)pdate");
 		System.out.println("(D)elete");
-		System.out.println("(V)iew");
 		System.out.println("E(X)it\n");
 		System.out.print("Choice: ");
 		String menuChoice = scnr.next().toUpperCase();
@@ -241,9 +244,13 @@ public class AddressBookMain {
 		return menuChoice;
 	}
 
-	// Gives user option to select either faculty or student when create option is
-	// selected.
 	public static String menuTypeSelection() {
+		/**
+		 * This method gives user option to select either faculty or student when create 
+		 * option is selected.
+		 *
+		 *@return The person type either faculty or student.
+		 */
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nSelect person type to process, otherwise press enter any key to exit:\n");
 		System.out.println("(F)aculty");
