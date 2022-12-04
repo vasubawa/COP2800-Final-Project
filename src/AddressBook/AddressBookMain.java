@@ -19,6 +19,7 @@
  *		The Faculty class allows the user to enter salary.
  *		The Student class allows the user to enter GPA.
  *		The program also displays an error message when an invalid input is entered.	
+ *		The program also displays an exit message when the exit option is selected.
  * Date:	12/3/22
  */
 
@@ -41,11 +42,12 @@ public class AddressBookMain {
 	 */
 
 	public static void main(String[] args) {
-
+		
+		// Declared variables.
 		ArrayList<Person> list = new ArrayList<Person>();
 		boolean cSelected = false;
 		char menuChoice = '\n';
-
+		// Do-while loop.
 		do {
 			menuChoice = menuOperationSelection().charAt(0);
 			cSelected = processChoice(menuChoice, list, cSelected);
@@ -54,7 +56,7 @@ public class AddressBookMain {
 	}
 
 	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
-
+		// Declared variables.
 		int pID = -1;
 
 		char personChoice;
@@ -62,23 +64,27 @@ public class AddressBookMain {
 		int sID = -1;
 		String fTitle = "\n";
 		int fSalary = -1;
+		// Declared scanner.
 		Scanner scnr = new Scanner(System.in);
 		boolean found = false;
 		int dID = -1;
 
 		Iterator<Person> iterList = list.iterator();
+		// If-else statement.
+		// Create selection from menu options.
 		if (menuChoice == 'C') {
 			cSelected = true;
 			// Person person = new Person();
 			Person cTemp = createInput(found, list);
 			personChoice = menuTypeSelection().charAt(0);
 			switch (personChoice) {
+			// Student selection.		
 			case 'S':
 				System.out.println("Student GPA:");
 				sGPA = scnr.nextInt();
 				list.add(new Student(cTemp, sGPA));
 				break;
-
+			// Faculty selection.
 			case 'F':
 				System.out.println("Salary:");
 				fSalary = scnr.nextInt();
@@ -86,14 +92,14 @@ public class AddressBookMain {
 				fTitle = scnr.nextLine();
 				list.add(new Faculty(cTemp, fSalary, fTitle));
 				break;
-
+			// Default.
 			default:
 				list.add(cTemp);
 				list.add(new Person("Unknown", -1, "Unknown", -1, "Unknown", pID));
 				// list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				break;
 			}
-
+		// Retrieve selection from menu options.
 		} else if (menuChoice == 'R' && cSelected) {
 			found = false;
 			System.out.print("\nEnter ID: ");
@@ -109,6 +115,7 @@ public class AddressBookMain {
 				}
 
 			}
+		// Update selection from menu options.
 		} else if (menuChoice == 'U' && cSelected == true) {
 			found = false;
 			System.out.print("\nEnter ID To Update: ");
@@ -129,6 +136,7 @@ public class AddressBookMain {
 					break;
 				}
 			}
+		// Delete selection from menu options.
 		} else if (menuChoice == 'D' & cSelected) {
 			found = false;
 			System.out.print("\nEnter ID To Delete: ");
@@ -146,17 +154,20 @@ public class AddressBookMain {
 			} else {
 				System.out.println("\nPerson does not exist.");
 			}
+		// View selection from menu options.
 		} else if (menuChoice == 'V' & cSelected) {
 			System.out.println("");
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
 				System.out.println(pView);
 			}
+		// Exit selection from menu options.
 		} else if (menuChoice == 'X') {
 			System.out.println("\nThank you for using Team 2's Address Book");
 		} else {
 			System.out.println("\nPlease enter one of the option from the menu!");
 		}
+		// Return the user selection from menu options.
 		return cSelected;
 	}
 
