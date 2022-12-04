@@ -156,7 +156,7 @@ public class AddressBookMain {
 		 *
 		 *@return A new person with the information entered by the user.
 		 */
-		Person asdf;
+		Person identity;
 		String pName = "\n";
 		String pEmail = "\n";
 		String pAddress = "\n";
@@ -212,16 +212,16 @@ public class AddressBookMain {
 				System.out.println("Job Title:");
 				fTitle = sScan.nextLine();
 			}
-			asdf = new Faculty(pName, pAge, pEmail, pPhoneNum, pAddress, pID, fSalary, fTitle);
+			identity = new Faculty(pName, pAge, pEmail, pPhoneNum, pAddress, pID, fSalary, fTitle);
 		} else if (personChoice == 'S') {
 			System.out.println("Student GPA:");
 			sGPA = iScan.nextFloat();
-			asdf = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sGPA);
+			identity = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sGPA);
 		} else {
-			asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
+			identity = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 		}
 
-		return asdf;
+		return identity;
 	}
 
 	public static String menuOperationSelection() {
