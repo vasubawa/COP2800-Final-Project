@@ -1,19 +1,15 @@
 package AddressBook;
 
 public class Faculty extends Person {
-	/**
-	 * This class allows the user to input the salary information when faculty type
-	 * is selected when creating a new person in the address book.
-	 **/
 	private double salary;
 	private String title;
 
-	public Faculty() {
-		this(-1, "Unknown");
-	}
+	public Faculty(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, int fSalary,
+			String fTitle) {
+		super(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 
-	public Faculty(double fSalary, String fTitle) {
-
+		this.salary = fSalary;
+		this.title = fTitle;
 	}
 
 	public void setSalary(double fSalary) {
