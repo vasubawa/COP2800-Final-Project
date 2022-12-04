@@ -27,6 +27,21 @@ package AddressBook;
 
 // Packages
 import java.util.*;
+/**
+ * This program is an address book displays a menu that allows the user to create, 
+ * retrieve, update, delete, view, and exit the program.
+ *
+ * @author Mohammed Khan
+ * @author Emanuel Martins
+ * @author Dhruv Sharma
+ * @author Hammad Uddin
+ * 
+ * @param args A String array containing any command line options.
+ * @return A String representing a person's name, age, email, phone number, home
+ *         address, ID, student GPA, faculty salary.
+ *
+ * @version 4.5, 12/3/22
+ */
 
 public class AddressBookMain {
 	/**
@@ -36,7 +51,7 @@ public class AddressBookMain {
 	 * name, age, email, phone number, home address, ID, student GPA, and faculty
 	 * salary. This class also contains the error message when an invalid input is
 	 * entered.
-	 * 
+	 *
 	 * @param args A String array containing any command line options.
 	 * @return A String representing a person's name, age, email, phone number, home
 	 *         address, ID, student GPA, faculty salary.
@@ -57,6 +72,12 @@ public class AddressBookMain {
 	}
 
 	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
+		/**
+		 * This method allows the program to intake the input by the user and run it through
+		 * the if-else and switch statements.
+		 * 
+		 * @return the choice selected by the user from the option menu. 
+		 */
 		// Declared variables.
 		boolean found = false;
 		int dID = -1;
@@ -142,8 +163,11 @@ public class AddressBookMain {
 		return cSelected;
 	}
 
-	// Information intake of person once create option is selected from menu option.
 	public static Person createInput(boolean found, ArrayList<Person> list) {
+		/**
+		 * This method takes the input of the user for a person type once
+		 * the create option is selected from the menu.
+		 */
 		Person asdf;
 		String pName = "\n";
 		String pEmail = "\n";
