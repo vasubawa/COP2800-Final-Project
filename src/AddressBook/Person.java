@@ -1,7 +1,14 @@
 package AddressBook;
 
 public class Person {
-
+/**
+ * This class contains all information that the user is prompted to input for
+ * the person type.
+ *
+ *@para String and intergers.
+ *@return Input taken by user 
+ */
+	// Declared variables.
 	private int age;
 	private String email;
 	private String address;
@@ -10,6 +17,12 @@ public class Person {
 	private int ID;
 
 	public Person() {
+		/**
+		 * This method allows the user to input data such as name, age, 
+		 * phone number, address, email, ID.
+		 *
+		 *@return The inputs taken from the user.
+		 */
 		this("Unknown", -1, "Unknown", "Unknown", "Unknown", -1);
 	}
 
