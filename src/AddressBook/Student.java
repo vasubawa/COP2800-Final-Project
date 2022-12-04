@@ -2,19 +2,19 @@ package AddressBook;
 
 public class Student extends Person {
 
-	private String id;
+	private float id;
 
-	public Student(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, String sID) {
+	public Student(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, float sGPA) {
 		super(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 
-		setStudentID(sID);
+		setStudentID(sGPA);
 	}
 
-	public void setStudentID(String sID) {
+	public void setStudentID(float sID) {
 		this.id = sID;
 	}
 
-	public String getStudentID() {
+	public float getStudentID() {
 		return id;
 	}
 
