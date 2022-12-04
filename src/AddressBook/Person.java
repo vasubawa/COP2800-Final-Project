@@ -26,7 +26,7 @@ public class Person {
 	}
 
 	public void setAddress(String pAddress) {
-		address = pAddress;
+		this.address = pAddress;
 	}
 
 	public String getAddress() {
@@ -34,9 +34,8 @@ public class Person {
 	}
 
 	public void setAge(int pAge) {
-		if (age > 0) {
-			this.age = pAge;
-		}
+		this.age = pAge;
+
 	}
 
 	public int getAge() {
@@ -76,7 +75,7 @@ public class Person {
 	}
 
 	public void setName(String pName) {
-		name = pName;
+		this.name = pName;
 	}
 
 	public String getName() {
@@ -84,7 +83,7 @@ public class Person {
 	}
 
 	public void setPhoneNum(String pPhoneNum) {
-		phoneNum = pPhoneNum;
+		this.phoneNum = pPhoneNum;
 	}
 
 	public String getPhoneNum() {
