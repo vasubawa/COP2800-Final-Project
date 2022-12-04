@@ -176,7 +176,7 @@ public class AddressBookMain {
 		String pName = "\n";
 		String pEmail = "\n";
 		String pAddress = "\n";
-		long pPhoneNum = -1;
+		int pPhoneNum = -1;
 		int pAge = -1;
 		int pID = -1;
 		boolean temp = false;
