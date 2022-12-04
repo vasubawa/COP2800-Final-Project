@@ -1,15 +1,7 @@
 package AddressBook;
 
 public class Person {
-	/**
-	 * This class allows the user to enter and stores information for each person
-	 * including age, email, address, name, phone number, ID.
-	 * 
-	 * @param A String array
-	 * @return A String representing a person's age, email, address, name, phone
-	 *         number, and ID.
-	 */
-	// Declared variables.
+
 	private int age;
 	private String email;
 	private String address;
@@ -28,6 +20,9 @@ public class Person {
 		setPhoneNum(pPhoneNum);
 		setAddress(pAddress);
 		setID(pID);
+	}
+
+	public Person(String pName, int pAge, String pEmail, int pPhoneNum, String pAddress, int pID) {
 	}
 
 	public void setAddress(String pAddress) {
@@ -70,10 +65,6 @@ public class Person {
 
 	public String getEmail() {
 		return email;
-	}
-
-	public static void checkID(String pID) {
-
 	}
 
 	public void setID(int pID) {
