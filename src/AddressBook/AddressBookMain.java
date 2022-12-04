@@ -121,7 +121,7 @@ public class AddressBookMain {
 			if (found == true) {
 				System.out.println("\nPerson with that ID has been deleted.");
 			} else {
-				System.out.println("\nPerson does not exist.");
+				System.out.println("\nPerson does not exist.s");
 			}
 			// View option from menu options.
 		} else if (menuChoice == 'V' & cSelected) {
@@ -132,7 +132,7 @@ public class AddressBookMain {
 			}
 			// Exit option from menu options.
 		} else if (menuChoice == 'X') {
-			System.out.println("\nThank you for using Team 2's Address Book");
+			System.out.println("\nThank you for using Team 2's Address Book!");
 		} else {
 			System.out.println("\nPlease enter one of the option from the menu!");
 		}
@@ -151,9 +151,10 @@ public class AddressBookMain {
 		String pPhoneNum = "\n";
 		int pAge = -1;
 		int pID = -1;
+		String sID = "\n";
 		boolean temp = false;
 		String fTitle = "\n";
-		int fSalary = -1;
+		String fSalary = "\n";
 		char personChoice;
 		Scanner sScan = new Scanner(System.in);
 		Scanner iScan = new Scanner(System.in);
@@ -164,9 +165,12 @@ public class AddressBookMain {
 		// pName = sScan.nextLine();
 		pName = " my name";
 
-		System.out.print("Age: ");
-		// pAge = iScan.nextInt();
-		pAge = 12;
+		do {
+			System.out.print("Age: ");
+			pAge = iScan.nextInt();
+		} while (pAge < 0);
+
+		// pAge = 12;
 		// Displays error message when incorrect email format is entered
 		do {
 			System.out.print("Email: ");
@@ -179,7 +183,6 @@ public class AddressBookMain {
 
 		System.out.print("Phone Number: ");
 		pPhoneNum = sScan.nextLine();
-		// pPhoneNum = 1243242340;
 
 		// This is here because home address keeps getting skipped and no idea why
 		if (temp == false) {
@@ -195,13 +198,17 @@ public class AddressBookMain {
 		if (personChoice == 'F') {
 			if (temp == false) {
 				System.out.println("Salary:");
-				fSalary = iScan.nextInt();
+				fSalary = iScan.nextLine();
 			}
 			if (temp == false) {
 				System.out.println("Job Title:");
 				fTitle = sScan.nextLine();
 			}
 			asdf = new Faculty(pName, pAge, pEmail, pPhoneNum, pAddress, pID, fSalary, fTitle);
+		} else if (personChoice == 'S') {
+			System.out.println("Student ID:");
+			sID = iScan.nextLine();
+			asdf = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sID);
 		} else {
 			asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 		}
