@@ -3,7 +3,8 @@
  * Names:	Mohammed Khan, Emanuel Martins, Dhruv Sharma, and Hammad Uddin
  * Course:	COP 2800C at Valencia College
  * Professor:	David Stendel 
- * Description:	This program allows the user to create, retrieve, update, delete, and view contacts in an address book.
+ * Description:	This program allows the user to create, retrieve, update, delete, and view contacts in 
+ *		an address book.
  *		The program displays a menu that lists an option for the user to choose from:
  *		Create:		Allows the user to create a contact.
  *		Retrieve: 	Allows the user to retrieve a contact.
@@ -11,7 +12,8 @@
  *		Delete:		Allows the user to delete a contact.
  *		View:		Allows the user to view a contact.
  *		Exit:		Allows the user exit from the program.
- *		The program also includes one Person class and two subclasses, Faculty, and Student that extend from the Person class.
+ *		The program also includes one Person class and two subclasses, Faculty, and Student that 
+ *		extend from the Person class.
  *		The Person class allows the user to enter the following information:
  *		Name, age, email, phone number, home address, ID.
  *		The Faculty class allows the user to enter salary.
@@ -26,6 +28,17 @@ package AddressBook;
 import java.util.*;
 
 public class AddressBookMain {
+	/**
+	 * This class contains the display menu as well as the scanner for user input. Each option 
+	 * in the menu is put into switch functions and implemented as per the choice of the user.
+	 * The data of the contacts are stored in this class as name, age, email, phone number, 
+	 * home address, ID, student GPA, and faculty salary.
+	 * This class also contains the error message when an invalid input is entered. 
+	 * 
+	 * @param args A String array containing any command line options.
+	 * @return A String representing a person's name, age, email, phone number, home address, 
+	 *         ID, student GPA, faculty salary.
+	 */
 
 	public static void main(String[] args) {
 
