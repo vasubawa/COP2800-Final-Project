@@ -1,13 +1,13 @@
 package AddressBook;
 
 public class Faculty extends Person {
-/**
- * This method allows the user to enter addition information pertaining to 
- * the faculty person type such as salary and title.
- * 
- *@return The input assigned to salary and the input assigned to title.
- */
-	//Declared variables.
+	/**
+	 * This method allows the user to enter addition information pertaining to the
+	 * faculty person type such as salary and title.
+	 * 
+	 * @return The input assigned to salary and the input assigned to title.
+	 */
+	// Declared variables.
 	private String salary;
 	private String title;
 
