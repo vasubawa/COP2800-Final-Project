@@ -1,8 +1,11 @@
 package AddressBook;
+// Packages.
 
-public class Faculty extends Person
-{
-
+public class Faculty extends Person {
+/**
+ * This class allows the user to input the salary information when faculty 
+ * type is selected when  creating a new person in the address book.
+ **/
 	public Faculty(Person createInput, int fSalary, String fTitle) {
 	}
 
