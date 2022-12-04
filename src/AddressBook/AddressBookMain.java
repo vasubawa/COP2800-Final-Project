@@ -25,8 +25,13 @@
 
 package AddressBook;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Scanner;
+
 // Packages
-import java.util.*;
 
 public class AddressBookMain {
 	/**
@@ -44,32 +49,33 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 		
 		// Declared variables.
-		ArrayList<Person> list = new ArrayList<Person>();
 		boolean cSelected = false;
 		char menuChoice = '\n';
+
 		// Do-while loop.
 		do {
 			menuChoice = menuOperationSelection().charAt(0);
-			cSelected = processChoice(menuChoice, list, cSelected);
+			cSelected = processChoice(menuChoice, cSelected);
 		} while (menuChoice != 'X');
 
 	}
 
-	public static boolean processChoice(char menuChoice, ArrayList<Person> list, boolean cSelected) {
+	public static boolean processChoice(char menuChoice, boolean cSelected) {
 		// Declared variables.
-		int pID = -1;
-
+		ArrayList<Person> list = new ArrayList<Person>();
+		Iterator<Person> iterList = list.iterator();
 		char personChoice;
 		float sGPA = -1;
-		int sID = -1;
 		String fTitle = "\n";
 		int fSalary = -1;
-		// Declared scanner.
-		Scanner scnr = new Scanner(System.in);
 		boolean found = false;
 		int dID = -1;
+		// Declared scanner.
+		Scanner scnr = new Scanner(System.in);
+		
+		
 
-		Iterator<Person> iterList = list.iterator();
+		
 		// If-else statement.
 		// Create option from menu options.
 		if (menuChoice == 'C') {
@@ -90,12 +96,12 @@ public class AddressBookMain {
 				fSalary = scnr.nextInt();
 				System.out.println("Job Title:");
 				fTitle = scnr.nextLine();
-				list.add(new Faculty(cTemp, fSalary, fTitle));
+				list.add(new Faculty(fSalary, fTitle));
 				break;
 			// Default.
 			default:
 				list.add(cTemp);
-				list.add(new Person("Unknown", -1, "Unknown", -1, "Unknown", pID));
+				//list.add(new Person("Unknown", -1, "Unknown","Unknown", "Unknown", pID));
 				// list.add(new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID));
 				break;
 			}
@@ -156,6 +162,7 @@ public class AddressBookMain {
 			}
 		// View option from menu options.
 		} else if (menuChoice == 'V' & cSelected) {
+			
 			System.out.println("");
 			while (iterList.hasNext()) {
 				Person pView = iterList.next();
@@ -167,6 +174,8 @@ public class AddressBookMain {
 		} else {
 			System.out.println("\nPlease enter one of the option from the menu!");
 		}
+		// Sorts the list
+		Collections.sort(list, (p1, p2) -> p1.getID() - (p2.getID()));
 		// Return the user selection from menu options.
 		return cSelected;
 	}
@@ -176,7 +185,7 @@ public class AddressBookMain {
 		String pName = "\n";
 		String pEmail = "\n";
 		String pAddress = "\n";
-		int pPhoneNum = -1;
+		String pPhoneNum = "\n";
 		int pAge = -1;
 		int pID = -1;
 		boolean temp = false;
@@ -203,8 +212,8 @@ public class AddressBookMain {
 		} while (Person.checkEmail(pEmail) == false);
 
 		System.out.print("Phone Number: ");
-		// pPhoneNum = iScan.nextInt();
-		pPhoneNum = 124324234;
+		pPhoneNum = sScan.nextLine();
+		//pPhoneNum = 1243242340;
 
 		// This is here because home address keeps getting skipped and no idea why
 		if (temp == false) {
@@ -217,7 +226,6 @@ public class AddressBookMain {
 		pID = iScan.nextInt();
 
 		asdf = new Person(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
-		// asdf = new Person("Unknown", -1, "Unknown", -1, "Unknown", pID);
 
 		return asdf;
 	}
