@@ -198,7 +198,7 @@ public class AddressBookMain {
 		if (personChoice == 'F') {
 			if (temp == false) {
 				System.out.println("Salary:");
-				fSalary = iScan.nextLine();
+				fSalary = sScan.nextLine();
 			}
 			if (temp == false) {
 				System.out.println("Job Title:");
