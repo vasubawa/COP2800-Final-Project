@@ -2,20 +2,20 @@ package AddressBook;
 
 public class Student extends Person {
 
-	private float id;
+	private float gpa;
 
 	public Student(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, float sGPA) {
 		super(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
 
-		setStudentID(sGPA);
+		setStudentGPA(sGPA);
 	}
 
-	public void setStudentID(float sID) {
-		this.id = sID;
+	public void setStudentGPA(float sGPA) {
+		this.gpa = sGPA;
 	}
 
-	public float getStudentID() {
-		return id;
+	public float getStudentGPA() {
+		return gpa;
 	}
 
 	public String toString() {
