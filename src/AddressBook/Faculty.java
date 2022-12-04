@@ -1,35 +1,35 @@
 package AddressBook;
 
 public class Faculty extends Person {
-	private double salary;
+	private String salary;
 	private String title;
 
-	public Faculty(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, int fSalary,
+	public Faculty(String pName, int pAge, String pEmail, String pPhoneNum, String pAddress, int pID, String fSalary,
 			String fTitle) {
 		super(pName, pAge, pEmail, pPhoneNum, pAddress, pID);
+		setSalary(fSalary);
+		setTitle(fTitle);
+	}
 
+	public void setSalary(String fSalary) {
 		this.salary = fSalary;
-		this.title = fTitle;
 	}
 
-	public void setSalary(double fSalary) {
-		salary = fSalary;
-	}
-
-	public double getSalary() {
+	public String getSalary() {
 		return salary;
 	}
 
 	public void setTitle(String fTitle) {
-		title = fTitle;
+		this.title = fTitle;
 	}
 
-	public double getTitle() {
-		return salary;
+	public String getTitle() {
+		return title;
 	}
 
-	public void printAll() {
-		super.toString();
-		System.out.print(", Salary: " + salary + ", Title: " + title);
+	public String toString() {
+		// super.toString();
+		// System.out.print(", Salary: " + salary + ", Title: " + title);
+		return super.toString() + ", Salary: " + getSalary() + ", Title: " + getTitle();
 	}
 }
