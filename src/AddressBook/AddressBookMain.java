@@ -154,7 +154,7 @@ public class AddressBookMain {
 		 * This method takes the input of the user for a person type once the create
 		 * option is selected from the menu.
 		 *
-		 *@return A new person with the information entered by the user.
+		 * @return A new person with the information entered by the user.
 		 */
 		Person identity;
 		String pName = "\n";
@@ -229,7 +229,7 @@ public class AddressBookMain {
 		 * This method displays the menu options for the user and takes the input from
 		 * the user's choice.
 		 *
-		 *@return The user's choice from the option menu.
+		 * @return The user's choice from the option menu.
 		 */
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nAddressBook Menu\n");
@@ -246,10 +246,10 @@ public class AddressBookMain {
 
 	public static String menuTypeSelection() {
 		/**
-		 * This method gives user option to select either faculty or student when create 
+		 * This method gives user option to select either faculty or student when create
 		 * option is selected.
 		 *
-		 *@return The person type either faculty or student.
+		 * @return The person type either faculty or student.
 		 */
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("\nSelect person type to process, otherwise press enter any key to exit:\n");
