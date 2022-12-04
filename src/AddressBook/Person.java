@@ -2,7 +2,6 @@ package AddressBook;
 // Packages.
 
 public class Person {
-	Person() {
 /**
  * This class allows the user to enter and stores information for each person 
  * including age, email, address, name, phone number, ID. 
@@ -108,5 +107,4 @@ public class Person {
 				+ ", PhoneNumber: " + getPhoneNum() + ", Address: " + getAddress();
 	}
 
-}
 }
