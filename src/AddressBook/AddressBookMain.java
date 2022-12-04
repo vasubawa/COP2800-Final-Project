@@ -162,8 +162,7 @@ public class AddressBookMain {
 		System.out.println("\nPlease enter the following information:");
 
 		System.out.print("\nFull Name: ");
-		// pName = sScan.nextLine();
-		pName = " my name";
+		pName = sScan.nextLine();
 
 		do {
 			System.out.print("Age: ");
@@ -174,8 +173,7 @@ public class AddressBookMain {
 		// Displays error message when incorrect email format is entered
 		do {
 			System.out.print("Email: ");
-			// pEmail = sScan.nextLine();
-			pEmail = "my@email.com";
+			pEmail = sScan.nextLine();
 			if (Person.checkEmail(pEmail) == false) {
 				System.out.println("Email is not correct format.");
 			}
@@ -187,8 +185,8 @@ public class AddressBookMain {
 		// This is here because home address keeps getting skipped and no idea why
 		if (temp == false) {
 			System.out.print("Home Address: ");
-			// pAddress = sScan.nextLine();
-			pAddress = "my home address ";
+			pAddress = sScan.nextLine();
+			
 		}
 		System.out.print("ID Number: ");
 		pID = iScan.nextInt();
