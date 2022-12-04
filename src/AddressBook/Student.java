@@ -21,7 +21,7 @@ public class Student extends Person {
 	public String toString() {
 		// super.toString();
 		// System.out.print(", Salary: " + salary + ", Title: " + title);
-		return super.toString() + ", Student ID: " + getStudentID();
+		return super.toString() + ", Student ID: " + getStudentGPA();
 	}
 
 }
