@@ -206,7 +206,7 @@ public class AddressBookMain {
 			}
 			asdf = new Faculty(pName, pAge, pEmail, pPhoneNum, pAddress, pID, fSalary, fTitle);
 		} else if (personChoice == 'S') {
-			System.out.println("Student ID:");
+			System.out.println("Student GPA:");
 			sGPA = iScan.nextFloat();
 			asdf = new Student(pName, pAge, pEmail, pPhoneNum, pAddress, pID, sGPA);
 		} else {
